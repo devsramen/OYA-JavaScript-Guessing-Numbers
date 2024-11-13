@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
 }
 #playerInput1,
 #playerInput2{
@@ -19,16 +19,28 @@
     text-align: center;
     outline: none;
 }
+
+#playerInput2{
+    width: 350px;
+}
+#playerInput2::placeholder{
+    font-size: 18px;
+}
 #playerInputBtn1,
 #playerInputBtn2{
     padding: 10px;
     font-size: 20px;
     font-weight: 700;
+    cursor: pointer;
 }
 #playerInput2,
 #playerInputBtn2{
     display: none;
 }
+/* #playerInput1,
+#playerInputBtn1{
+    display: none;
+} */
 .title{
     font-size: 32px;
     text-align: center;
@@ -36,6 +48,23 @@
     margin-bottom: 20px;
 }
 #errorMessage{
+    display: inline-block;
     color: red;
     text-transform: capitalize;
+    margin-top: 10px;
+}
+#chance{
+    display: none;
+}
+#winner{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    color: green;
+    margin-bottom: 10px;
+}
+#congratulation{
+    width: 700px;
+    height: auto;
+    display: none;
 }
