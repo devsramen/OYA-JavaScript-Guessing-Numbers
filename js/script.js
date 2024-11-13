@@ -11,7 +11,7 @@ const congratulation = document.querySelector("#congratulation");
 
 let guessingNumber;
 let optionNumber = []
-let count = 3;
+let count = 5;
 
 playerInputBtn1.addEventListener("click",(event)=>{
     if(Boolean(Number(playerInput1.value))){

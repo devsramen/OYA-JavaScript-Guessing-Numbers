@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.error{
+    color: red;
+}
+
+.playertwoinput,
+.playertwobutton,
+h2{
+    display: none;
+}
+img{
+    display: none;
+}
