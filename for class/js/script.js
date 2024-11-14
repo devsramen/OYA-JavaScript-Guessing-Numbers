@@ -7,6 +7,8 @@ let error = document.querySelector(".error");
 let heading = document.querySelector(".heading");
 let span = document.querySelector("span");
 let anotherHeading = document.querySelector("h2");
+let img = document.querySelector("img");
+
 let playerOneNumber;
 let count = 5;
 
@@ -15,12 +17,16 @@ playeronebutton.addEventListener("click",function(){
         error.innerHTML = "Please give a Number";
     }else{
         if(Number(playeroneinput.value)){
-            playerOneNumber = playeroneinput.value;
-            error.innerHTML = "";
-            displayControl("p2bp1n")
-            heading.innerHTML = "Player-2";
-            span.innerHTML = count;
-            anotherHeading.style.display = "block"
+            if( Number(playeroneinput.value) >= 1 && Number(playeroneinput.value)<=10 ){
+                playerOneNumber = playeroneinput.value;
+                error.innerHTML = "";
+                displayControl("p2bp1n")
+                heading.innerHTML = "Player-2";
+                span.innerHTML = count;
+                anotherHeading.style.display = "block"
+            }else{
+            error.innerHTML = "Please give a Number between 1-10";
+            }
         }else{
             error.innerHTML = "Please give a Number";
         }
@@ -35,10 +41,14 @@ playertwobutton.addEventListener("click",function(){
                 error.innerHTML = "";
                 count--
                 span.innerHTML = count;
-                if( playerOneNumber == playertwoinput.value ){
-                    console.log("Player-2 is Winner");
+                if( playerOneNumber == playertwoinput.value && count == 0){
+                    heading.innerHTML = "Player-2 is Winner";
+                    img.style.display = "block"
+                    displayControl("all")
                 }else if(count == 0){
-                    console.log("Player-1 is Winner");
+                    heading.innerHTML = "Player-1 is Winner";
+                    img.style.display = "block"
+                    displayControl("all")
                 }
             }else{
                 error.innerHTML = "Please give a Number";
@@ -48,19 +58,6 @@ playertwobutton.addEventListener("click",function(){
         console.log("Game is Over")
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -90,7 +87,15 @@ function displayControl(type){
     else if(type == "p2b"){
         playertwoinput.style.display = "inline-block"
         playertwobutton.style.display = "inline-block"
-    } 
+    }
+    else if(type == "all"){
+        playertwoinput.style.display = "none"
+        playertwobutton.style.display = "none"
+        playeroneinput.style.display = "none"
+        playeronebutton.style.display = "none"
+        anotherHeading.style.display = "none"
+
+    }
 }
 
 

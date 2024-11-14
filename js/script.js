@@ -14,7 +14,7 @@ let optionNumber = []
 let count = 5;
 
 playerInputBtn1.addEventListener("click",(event)=>{
-    if(Boolean(Number(playerInput1.value))){
+    if(Boolean(Number(playerInput1.value)) && Number(playerInput1.value) >=1 && Number(playerInput1.value) <= 10 ){
         guessingNumber = Number(playerInput1.value)
         // displayControl(event.target)
         playerInput1.style.display = "none";
@@ -26,7 +26,7 @@ playerInputBtn1.addEventListener("click",(event)=>{
         chanceCount.innerHTML = count;
         // console.log()
     }else{
-        errorMessage.innerHTML = "Please Enter a Number, characters & zero are not allowed."
+        errorMessage.innerHTML = "Please Enter a Number between 1-10, characters & zero are not allowed."
     }    
     console.log(guessingNumber);    
 })
@@ -51,6 +51,7 @@ playerInputBtn2.addEventListener("click",(event)=>{
                     playerInputBtn2.style.display = "none"
                     winner.innerHTML = "Player-1 is Winner"
                     chance.style.display = "none";
+                    congratulation.style.display = "block";
                 }
             }
         }else{
