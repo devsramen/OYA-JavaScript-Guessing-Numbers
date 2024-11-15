@@ -32,15 +32,15 @@ playerInputBtn1.addEventListener("click",(event)=>{
 })
 playerInputBtn2.addEventListener("click",(event)=>{
     if(Boolean(Number(playerInput2.value))){
-        if((Number(playerInput2.value)) > 0 && (Number(playerInput2.value)) < 10){
-            optionNumber.push(playerInput2.value)
+        if((Number(playerInput2.value)) > 0 && (Number(playerInput2.value)) <= 10){
+            optionNumber.push(Number(playerInput2.value))
             errorMessage.style.display = "none"
             errorMessage.innerHTML = "";
             playerInput2.value = "";
             console.log(optionNumber)
             chanceCount.innerHTML = count - optionNumber.length
             if(optionNumber.length == count){
-                if(optionNumber[0] == guessingNumber || optionNumber[1] == guessingNumber || optionNumber[2] == guessingNumber || optionNumber[3] == guessingNumber || optionNumber[4] == guessingNumber){
+                if(optionNumber.indexOf(guessingNumber) != -1){
                     winner.innerHTML = "Player-2 is Winner"
                     playerInput2.style.display = "none"
                     playerInputBtn2.style.display = "none"
